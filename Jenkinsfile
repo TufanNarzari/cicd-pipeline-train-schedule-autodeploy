@@ -16,14 +16,14 @@ pipeline {
            
             when {
                 branch 'master'
-            }
+            
                  steps {
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME )
                     app.inside {
                         sh 'echo Hello, World!' }}
                  
-                }
+                 }}
         }
         stage('Push Docker Image') {
             when {
