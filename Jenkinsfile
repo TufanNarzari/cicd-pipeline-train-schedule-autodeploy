@@ -15,7 +15,8 @@ pipeline {
         stage('Build Docker Image') {
            
             when {
-                branch 'master'
+                branch 'master' 
+            }
             
                  steps {
                 script {
@@ -24,7 +25,7 @@ pipeline {
                         sh 'echo Hello, World!' }}
                  
                  }}
-        }
+        
         stage('Push Docker Image') {
             when {
                 branch 'master'
